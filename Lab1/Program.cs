@@ -1,2 +1,2 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿static double X(double a) => 12 * Math.Pow(a, 2) + 7 * a - 16;
+static double Y(double x) => 7 * Math.Pow(x, 2) - 3 * x + 6;
