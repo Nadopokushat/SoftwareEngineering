@@ -1,4 +1,5 @@
-﻿int[] numbers = new int[3];
+﻿#region Task1
+int[] numbers = new int[3];
 Random random= new Random();
 for (int i = 0; i < 3; i++)
 {
@@ -6,7 +7,76 @@ for (int i = 0; i < 3; i++)
 }
 int maxNumber = numbers.Max();
 int minNumber = numbers.Min();
+#endregion
 
+#region Task2
+int year = 1997;
+int month = 5;
+int numberOfCompletedYears = GetNumberOfCompletedYears(year,month);
+static int GetNumberOfCompletedYears(int year, int month)
+{
+    int currentYear = DateTime.Today.Year, currentMonth = DateTime.Today.Month;
+
+    if ((year > currentYear) || (year == currentYear && month > currentMonth) || (month < 1 || month > 12))
+    {
+        throw new ArgumentException("Year of birth and month of birth should not be greater than the current.");
+    }
+
+    if (month <= currentMonth)
+    {
+        return currentYear - year;
+    }
+    else
+    {
+        return currentYear - year - 1;
+    }
+}
+#endregion
+
+#region Task3
+int dayNumber = 256;
+bool isItDayOff = IsItDayOff(dayNumber);
+static bool IsItDayOff(int dayNumber)
+{
+    if (dayNumber < 1 || dayNumber > 365)
+    {
+        throw new ArgumentException("The day must be between 1 and 365.");
+    }
+
+    dayNumber = dayNumber % 7;
+
+    switch (dayNumber)
+    {
+        case >= 1 and <= 5:
+            return false;
+        case 6 or 0:
+            return true;
+        default:
+            return false;
+    }
+}
+#endregion
+
+#region Task4
+int gamePoints = 3;
+string resultOfGame = GetResultOfGame(gamePoints);
+static string GetResultOfGame(int points)
+{
+    switch (points)
+    {
+        case 3:
+            return "Win";
+        case 1:
+            return "Draw";
+        case 0:
+            return "Lose";
+        default:
+            throw new ArgumentException("Invalid points value.");
+    }
+}
+#endregion
+
+#region Task5
 int monthNumber = random.Next(1, 13);
 string season;
 switch (monthNumber)
@@ -28,58 +98,4 @@ switch (monthNumber)
 }
 DateTime date = new DateTime(1999, monthNumber, 1);
 Console.WriteLine($"It is {date.ToString("MMMM")}, {season}. {date.ToString("MMMM")} has {DateTime.DaysInMonth(1999, 5)} days.");
-
-
-static int GetNumberOfCompletedYears(int year, int month)
-{
-    int currentYear = DateTime.Today.Year, currentMonth = DateTime.Today.Month;
-
-    if ((year > currentYear) || (year == currentYear && month > currentMonth) || (month < 1 || month > 12))
-    {
-        throw new ArgumentException("Year of birth and month of birth should not be greater than the current.");
-    }
-
-    if (month <= currentMonth)
-    {
-        return currentYear - year;
-    }
-    else
-    {
-        return currentYear - year - 1;
-    }
-}
-
-static bool IsItDayOff(int dayNumber)
-{
-    if (dayNumber < 1 || dayNumber > 365)
-    {
-        throw new ArgumentException("The day must be between 1 and 365.");
-    }
-
-    dayNumber = dayNumber % 7;
-
-    switch (dayNumber)
-    {
-        case >= 1 and <= 5:
-            return false;
-        case 6 or 0:
-            return true;
-        default:
-            return false;
-    }
-}
-
-static string GetResultOfGame(int points)
-{
-    switch (points)
-    {
-        case 3:
-            return "Win";
-        case 1:
-            return "Draw";
-        case 0:
-            return "Lose";
-        default:
-            throw new ArgumentException("Invalid points value.");
-    }
-}
+#endregion
