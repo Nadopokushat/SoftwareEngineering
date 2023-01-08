@@ -1,5 +1,10 @@
-﻿Console.WriteLine("e = {0:f1}\npi = {1:f}", Math.E, Math.PI);
+﻿#region Task1
+using Triangle;
 
+Console.WriteLine("e = {0:f1}\npi = {1:f}", Math.E, Math.PI);
+#endregion
+
+#region Task2
 /*
  * Math.Sqrt(Math.Pow(x1, 2) + Math.Pow(x2, 2));
  * x1 * x2 + x1 * x3 + x2 * x3;
@@ -20,8 +25,23 @@
  * Math.Abs(x) + Math.Abs(x + 1);
  * Math.Abs(1 - Math.Abs(x));
  */
+#endregion
 
+#region Task3
 static double Z(double x, double y)
 {
     return Math.Pow(x, 3) - 2.5 * x * y + 1.78 * x * x - 2.5 * y + 1;
 }
+#endregion
+
+#region Task4
+Console.WriteLine();
+Console.Write("Enter leg A: ");
+double legA = double.Parse(Console.ReadLine());
+Console.Write("Enter leg A: ");
+double legB = double.Parse(Console.ReadLine());
+
+RightTriangle triangle = new RightTriangle(legA, legB);
+
+Console.WriteLine($"Triangle perimeter is {triangle.GetPerimeter():f2}");
+#endregion
