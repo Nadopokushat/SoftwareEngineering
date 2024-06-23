@@ -1,1 +1,0 @@
-javac -d out Main.java Shape\Shape.java Shape\Rectangle.java Shape\Square.java
