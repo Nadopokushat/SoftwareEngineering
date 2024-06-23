@@ -1,6 +1,7 @@
 package SoftwareEngineering.Lab1;
 
 import SoftwareEngineering.Lab1.Shape.*;
+import SoftwareEngineering.Lab1.Temperature.*;
 
 public class Main {
     public static void main(String args[]) {

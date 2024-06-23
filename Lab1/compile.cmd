@@ -1,1 +1,1 @@
-javac -d out Main.java Shape\Shape.java Shape\Rectangle.java Shape\Square.java
+javac -d out src\Main.java src\Shape\IShape.java src\Shape\Rectangle.java src\Shape\Square.java src\Temperature\ITemperature.java src\Temperature\BaseTemperature.java src\Temperature\Celsius.java src\Temperature\Fahrenheit.java src\Temperature\Kelvin.java

@@ -1,6 +1,6 @@
 package SoftwareEngineering.Lab1.Shape;
 
-public class Rectangle implements Shape {
+public class Rectangle implements IShape {
     private double a;
     private double b;
 

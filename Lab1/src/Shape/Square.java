@@ -1,6 +1,6 @@
 package SoftwareEngineering.Lab1.Shape;
 
-public class Square implements Shape {
+public class Square implements IShape {
     private double a;
 
     public Square(double a) {
